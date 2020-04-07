@@ -16,6 +16,9 @@ TEST "asking for help"
   launch 
   alexa: waitForName
   user: AMAZON.HelpIntent
-  alexa: waitForName
+  # This will verify that your skill is now in the waitForName state and 
+  # executed a 'say' command that matches the /tell me your name/i regex.
+  # For other supported syntaxes check the Language Reference for 'alexa:'
+  alexa: waitForName, /tell me your name/i 
   user: "Jimbo"
   END
